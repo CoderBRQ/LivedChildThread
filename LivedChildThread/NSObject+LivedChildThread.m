@@ -18,7 +18,7 @@ static void *NSObjectLivedChildThread = &NSObjectLivedChildThread;
 - (HJLivedChildThread *)hj_thread {
     id thread = objc_getAssociatedObject(self, &NSObjectLivedChildThread);
     if (nil == thread) {
-        thread = [[HJLivedChildThread alloc] init];
+        thread = HJLivedChildThread.sharedThread;
         self.hj_thread = thread;
     }
     return thread;

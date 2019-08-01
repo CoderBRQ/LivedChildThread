@@ -14,7 +14,7 @@
 
  @param task The task shoud be executed in the thread.
  */
-- (void)hj_executeTask:(void(^ _Nonnull)(void))task;
+- (void)hj_executeTask:(void(^_Nullable)(void))task;
 
 
 /**

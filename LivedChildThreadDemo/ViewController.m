@@ -12,33 +12,50 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) HJLivedChildThread *thread;
+
+
+- (IBAction)executeCommonThread:(id)sender;
+
+- (IBAction)stopCommonTread:(id)sender;
+
+- (IBAction)excuteGlobalThread:(id)sender;
+
+- (IBAction)stopGlobalThread:(id)sender;
+
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.thread = [[HJLivedChildThread alloc] init];
 }
 
-// 普通子线程
-- (void)commonThread {
-    self.thread = [[HJLivedChildThread alloc] init];
-    
+
+
+- (IBAction)executeCommonThread:(id)sender {
     [self.thread hj_executeTask:^{
-        NSLog(@"%s", __func__);
+        NSLog(@"子线程执行任务");
     }];
 }
 
-// 结束普通子线程
-- (void)stopCommonThread {
+- (IBAction)stopCommonTread:(id)sender {
+    NSLog(@"stop common thread");
     [self.thread hj_stopThread];
 }
 
-- (void)globalThread {
+- (IBAction)excuteGlobalThread:(id)sender {
     // 全局常驻子线程
     [self.hj_thread hj_executeTask:^{
-        NSLog(@"Execute task.");
+        NSLog(@"全局子线程执行任务");
     }];
 }
+
+- (IBAction)stopGlobalThread:(id)sender {
+    NSLog(@"stop global thread");
+    [self.hj_thread hj_stopThread];
+}
+
 @end

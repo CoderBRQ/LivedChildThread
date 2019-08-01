@@ -6,9 +6,22 @@
 
 #import "HJLivedChildThread.h"
 
+@interface HJThread : NSThread
+@end
+
+@implementation HJThread
+
+- (void)dealloc {
+#ifdef DEBUG
+    NSLog(@"thread dealloc");
+#endif
+}
+@end
+
+
 @interface HJLivedChildThread()
 
-@property (strong, nonatomic) NSThread *thread;
+@property (strong, nonatomic) HJThread *thread;
 @property (assign, nonatomic, getter=isStopped) BOOL stopped;
 
 @end
@@ -24,28 +37,24 @@
     return _livedChildThread;
 }
 
-- (instancetype)init
-{
-    if (self = [super init]) {
+- (HJThread *)thread {
+    if (nil == _thread) {
         self.stopped = NO;
-        
         __weak typeof(self) weakSelf = self;
-        
-        self.thread = [[NSThread alloc] initWithBlock:^{
+        _thread = [[HJThread alloc] initWithBlock:^{
             [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
             
             while (weakSelf && !weakSelf.isStopped) {
                 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             }
         }];
-        
-        [self.thread start];
+        [_thread start];
     }
-    return self;
+    return _thread;
 }
 
 - (void)hj_executeTask:(void (^)(void))task {
-    if (!self.thread || !task) return;
+    if (!task) return;
     
     [self performSelector:@selector(p_executeTask:) onThread:self.thread withObject:task waitUntilDone:NO];
 }
@@ -57,7 +66,7 @@
 
 - (void)hj_stopThread
 {
-    if (!self.thread) return;
+    if (!_thread) return;
     
     [self performSelector:@selector(p_stop) onThread:self.thread withObject:nil waitUntilDone:YES];
 }

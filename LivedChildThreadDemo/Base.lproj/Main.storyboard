@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,73 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIh-hF-uc4">
+                                <rect key="frame" x="88" y="132" width="238" height="44"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.6705882353" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="执行常驻子线程任务">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="executeCommonThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EA-1e-3ku"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxg-NO-2dx">
+                                <rect key="frame" x="114.5" y="195" width="185" height="44"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.6705882353" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="结束常驻子线程">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopCommonTread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM6-bg-Jsa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd3-NT-5EW">
+                                <rect key="frame" x="88" y="351" width="238" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="执行全局子线程任务">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="excuteGlobalThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sjq-lH-hrk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-qu-o0j">
+                                <rect key="frame" x="114.5" y="428" width="185" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="结束全局子线程">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopGlobalThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPR-0c-X17"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mxg-NO-2dx" firstAttribute="centerX" secondItem="vIh-hF-uc4" secondAttribute="centerX" id="IrE-aC-OKy"/>
+                            <constraint firstItem="Mxg-NO-2dx" firstAttribute="top" secondItem="vIh-hF-uc4" secondAttribute="bottom" constant="19" id="NkH-G8-SQ5"/>
+                            <constraint firstItem="fU4-qu-o0j" firstAttribute="top" secondItem="Sd3-NT-5EW" secondAttribute="bottom" constant="33" id="PyB-S6-c2U"/>
+                            <constraint firstItem="vIh-hF-uc4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YXm-oQ-Aug"/>
+                            <constraint firstItem="Sd3-NT-5EW" firstAttribute="top" secondItem="Mxg-NO-2dx" secondAttribute="bottom" constant="112" id="dB9-kg-iV0"/>
+                            <constraint firstItem="Sd3-NT-5EW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i9J-df-B44"/>
+                            <constraint firstItem="fU4-qu-o0j" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kSa-Uq-2Wb"/>
+                            <constraint firstItem="vIh-hF-uc4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="xAF-OU-IaF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="85.714285714285708"/>
         </scene>
     </scenes>
 </document>
