@@ -8,6 +8,8 @@
 #import <objc/runtime.h>
 
 static void observerCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    
+#ifdef DEBUG
     switch (activity) {
         case kCFRunLoopEntry:
             NSLog(@"kCFRunLoopEntry");
@@ -31,6 +33,7 @@ static void observerCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity ac
         default:
             break;
     }
+#endif
 }
 
 @interface HJThread : NSThread
@@ -153,3 +156,4 @@ static void observerCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity ac
 }
 
 @end
+ 
