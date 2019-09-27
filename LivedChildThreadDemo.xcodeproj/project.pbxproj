@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63CF0E14233DB14D00DBB5D3 /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CF0E13233DB14D00DBB5D3 /* AnotherViewController.m */; };
 		63DC0BEF22F2B13700C86ED0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC0BEE22F2B13700C86ED0 /* AppDelegate.m */; };
 		63DC0BF222F2B13700C86ED0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC0BF122F2B13700C86ED0 /* ViewController.m */; };
 		63DC0BF522F2B13700C86ED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DC0BF322F2B13700C86ED0 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63CF0E12233DB14D00DBB5D3 /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
+		63CF0E13233DB14D00DBB5D3 /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
 		63DC0BEA22F2B13700C86ED0 /* LivedChildThreadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivedChildThreadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC0BED22F2B13700C86ED0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63DC0BEE22F2B13700C86ED0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				63DC0BEE22F2B13700C86ED0 /* AppDelegate.m */,
 				63DC0BF022F2B13700C86ED0 /* ViewController.h */,
 				63DC0BF122F2B13700C86ED0 /* ViewController.m */,
+				63CF0E12233DB14D00DBB5D3 /* AnotherViewController.h */,
+				63CF0E13233DB14D00DBB5D3 /* AnotherViewController.m */,
 				63DC0BF322F2B13700C86ED0 /* Main.storyboard */,
 				63DC0BF622F2B13900C86ED0 /* Assets.xcassets */,
 				63DC0BF822F2B13900C86ED0 /* LaunchScreen.storyboard */,
@@ -165,6 +170,7 @@
 				63DC0C0922F2B17C00C86ED0 /* NSObject+LivedChildThread.m in Sources */,
 				63DC0C0A22F2B17C00C86ED0 /* HJLivedChildThread.m in Sources */,
 				63DC0BFD22F2B13900C86ED0 /* main.m in Sources */,
+				63CF0E14233DB14D00DBB5D3 /* AnotherViewController.m in Sources */,
 				63DC0BEF22F2B13700C86ED0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

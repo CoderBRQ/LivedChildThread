@@ -9,6 +9,7 @@
 #import "ViewController.h"
 // 导入头文件
 #import "LivedChildThread.h"
+#import "AnotherViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) HJLivedChildThread *thread;
@@ -22,6 +23,7 @@
 
 - (IBAction)stopGlobalThread:(id)sender;
 
+- (IBAction)timerButton1:(id)sender;
 
 @end
 
@@ -32,7 +34,6 @@
 
     self.thread = [[HJLivedChildThread alloc] init];
 }
-
 
 
 - (IBAction)executeCommonThread:(id)sender {
@@ -57,5 +58,15 @@
     NSLog(@"stop global thread");
     [self.hj_thread hj_stopThread];
 }
+
+- (IBAction)timerButton1:(id)sender {
+    AnotherViewController *anotherVC = [AnotherViewController new];
+    anotherVC.view.backgroundColor = [UIColor yellowColor];
+    [self presentViewController:anotherVC animated:YES completion:^{
+        
+    }];
+    
+}
+
 
 @end

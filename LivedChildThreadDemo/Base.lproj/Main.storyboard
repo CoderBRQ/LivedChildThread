@@ -62,6 +62,20 @@
                                     <action selector="stopGlobalThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPR-0c-X17"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMA-WT-spV">
+                                <rect key="frame" x="20" y="561" width="374" height="52"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="vwB-Bv-h4e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="子线程中添加定时器（NSTimer）">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZD-Rg-c2u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -69,9 +83,12 @@
                             <constraint firstItem="Mxg-NO-2dx" firstAttribute="top" secondItem="vIh-hF-uc4" secondAttribute="bottom" constant="19" id="NkH-G8-SQ5"/>
                             <constraint firstItem="fU4-qu-o0j" firstAttribute="top" secondItem="Sd3-NT-5EW" secondAttribute="bottom" constant="33" id="PyB-S6-c2U"/>
                             <constraint firstItem="vIh-hF-uc4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YXm-oQ-Aug"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SMA-WT-spV" secondAttribute="trailing" constant="20" id="avb-Dx-KRA"/>
+                            <constraint firstItem="SMA-WT-spV" firstAttribute="top" secondItem="fU4-qu-o0j" secondAttribute="bottom" constant="89" id="cyX-Gd-QAw"/>
                             <constraint firstItem="Sd3-NT-5EW" firstAttribute="top" secondItem="Mxg-NO-2dx" secondAttribute="bottom" constant="112" id="dB9-kg-iV0"/>
                             <constraint firstItem="Sd3-NT-5EW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i9J-df-B44"/>
                             <constraint firstItem="fU4-qu-o0j" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kSa-Uq-2Wb"/>
+                            <constraint firstItem="SMA-WT-spV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qd8-dt-FkW"/>
                             <constraint firstItem="vIh-hF-uc4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="xAF-OU-IaF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
