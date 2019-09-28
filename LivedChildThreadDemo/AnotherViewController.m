@@ -11,7 +11,7 @@
 
 
 @interface AnotherViewController ()
-//@property (nonatomic, strong) HJLivedChildThread *thread;
+@property (nonatomic, strong) HJLivedChildThread *thread;
 @property (nonatomic, strong) NSTimer *timer;
 @end
 
@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.thread = [[HJLivedChildThread alloc] init];
+    self.thread = [[HJLivedChildThread alloc] init];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, UIScreen.mainScreen.bounds.size.width, 50)];
     label.userInteractionEnabled = YES;
@@ -35,22 +35,12 @@
     }];
     self.timer = timer;
     
-    [self.hj_thread hj_addTimer:timer];
+    [self.thread hj_addTimer:timer];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self.hj_thread hj_removeTimer:self.timer];
+    [self.thread hj_removeTimer:self.timer];
     
 }
 

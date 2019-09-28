@@ -90,12 +90,6 @@ static void observerCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity ac
 #pragma mark - dealloc
 - (void)dealloc
 {
-    for (NSTimer *timer in self.timerMapTable) {
-        if (timer.isValid) {
-            [timer invalidate];
-        }
-    }
-    [self.timerMapTable removeAllObjects];
     [self hj_stopThread];
 }
 

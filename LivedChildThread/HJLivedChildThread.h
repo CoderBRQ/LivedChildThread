@@ -43,7 +43,7 @@
 - (void)hj_addTimer:(NSTimer *_Nullable)timer;
 
 /**
- 移除定时器
+ 只移除定时器。
 
  @param timer 定时器实例对象作为移除key
  */
